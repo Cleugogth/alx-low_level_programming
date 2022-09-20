@@ -1,17 +1,20 @@
-#include <stdio.h>
-/**
- * main - Entry point
- * Description: A program that prints a-z backwards.
- * Return: 0
- */
-int main(void)
-{
-	char alphabet;
+#include "main.h"
 
-	for (alphabet =  'z'; alphabet >= 'a'; alphabet--)
+/**
+ * print_last_digit - prints the last digit of a number
+ * @n: n is an integer
+ * Description: prints the last digit of a number
+ * Return: integer
+ */
+
+int print_last_digit(int n)
+{
+	int last = n % 10;
+
+	if (n < 0)
 	{
-		putchar(alphabet);
+		last = last * -1;
 	}
-	putchar('\n');
-	return (0);
+	_putchar(last + '0');
+	return (last);
 }

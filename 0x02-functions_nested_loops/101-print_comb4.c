@@ -1,35 +1,23 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
- * Description: This porgram prints all possible combinations
- * of a 3 digit number without repition
- * Return: 0
+ * main - Prints the sum of all multiples of 3 or 5 up to 102
+ * Return: Always (Success)
  */
 int main(void)
 {
-	int a, b, c;
+	int i, z = 0;
 
-	for (a = 0; a <= 9; a++)
+	while (i < 1024)
 	{
-		for (b = 0; b <= 9; b++)
+		if ((i % 3 == 0) || (i % 5 == 0))
 		{
-			for  (c = 0; c <= 9; c++)
-			{
-				if (a < b && b < c)
-				{
-					putchar(a + '0');
-					putchar(b + '0');
-					putchar(c + '0');
-
-					if (a != 7)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-				}
-			}
+			z += i;
 		}
+
+		i++;
 	}
-	putchar('\n');
+
+	printf("%d\n", z);
 	return (0);
 }
